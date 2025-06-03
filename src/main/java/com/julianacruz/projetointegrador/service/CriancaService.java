@@ -1,5 +1,6 @@
 package com.julianacruz.projetointegrador.service;
 
+import com.julianacruz.projetointegrador.model.BrinquedoModel;
 import com.julianacruz.projetointegrador.model.CriancaModel;
 import com.julianacruz.projetointegrador.model.CriancaModel;
 import com.julianacruz.projetointegrador.repository.CriancaRepository;
@@ -19,6 +20,11 @@ public class CriancaService {
     }
 
     public CriancaModel salvar(CriancaModel crianca) {
+        CriancaModel criancadoModel = new CriancaModel();
+        criancadoModel.setNome(crianca.getNome());
+        criancadoModel.setIdade(crianca.getIdade());
+        //BrinquedoModel = new BrinquedoModel();
+        criancadoModel.setBrinquedos(crianca.getBrinquedos());
         return criancaRepository.save(crianca);
     }
 

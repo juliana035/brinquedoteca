@@ -20,7 +20,10 @@ public class BrinquedoService {
     }
 
     public BrinquedoModel salvar(BrinquedoModel brinquedo) {
-        return brinquedoRepository.save(brinquedo);
+        BrinquedoModel brinquedoModel = new BrinquedoModel();
+        brinquedoModel.setNome(brinquedo.getNome());
+        brinquedoModel.setDescricao(brinquedo.getDescricao());
+        return brinquedoRepository.save(brinquedoModel);
     }
 
     public void deletar(Long id) {
